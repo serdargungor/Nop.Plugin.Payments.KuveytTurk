@@ -1,4 +1,4 @@
-﻿nopCommerce KuveytTurk SanalPos Free Payment Login
+﻿nopCommerce KuveytTurk SanalPos Free Payment Plugin
 ===========
 
 nopCommerce site: [https://www.nopcommerce.com](https://www.nopcommerce.com)
