@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "KuveytTurk",
+  "SystemName": "Payments.KuveytTurk",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.20" ],
+  "Author": "Muhammed Cindioglu",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.KuveytTurk.dll",
+  "Description": "This plugin allows to make payments using KuveytTurk module"
+}
