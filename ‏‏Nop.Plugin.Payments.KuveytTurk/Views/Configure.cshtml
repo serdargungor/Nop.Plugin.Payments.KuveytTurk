@@ -1,0 +1,74 @@
+﻿@model ConfigurationModel
+
+@using Nop.Plugin.Payments.KuveytTurk
+@using Nop.Plugin.Payments.KuveytTurk.Models
+@inject Nop.Core.IWebHelper webHelper
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<form asp-controller="PaymentKuveytTurk" asp-action="Configure" method="post">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    To configure the KuveytTurk plugin for nopCommerce.<br />
+                    <br />
+                    1. Log into either the <a href="https://kurumsal.kuveytturk.com.tr/Login/CorporateInitialLogin" target="_blank">KuveytTurk ControlPanel</a>.<br />
+                    2. Find, copy and paste your Account Number (Customer No), Password and User Name then click Login.<br />
+                    3. You will receive code as sms. Enter this code then click Login.<br />
+                    4. From main menu slick on (All Transactions) then (Management) then (User Operations).<br />
+                    5. If you doesn't added user yet, add new user as api user and select password (don't forget to active the user account).<br />
+                    6. Copy CustomerId (Account No), MerchantId, UserName, Password and paste it here.<br />
+                    7. Save the configuration.<br />
+                </p>
+                <p>
+                    <em>Notes:</em><br />
+                    For this plugin to work properly ensure that your primary store currency is TL.<br />
+                </p>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="CustomerId" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="CustomerId" asp-required="true" />
+                        <span asp-validation-for="CustomerId"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="MerchantId" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="MerchantId" asp-required="true" />
+                        <span asp-validation-for="MerchantId"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserName" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserName" asp-required="true" />
+                        <span asp-validation-for="UserName"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="Password" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="Password" asp-value="@Model.Password" asp-required="true" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
